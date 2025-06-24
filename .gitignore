@@ -1,0 +1,8 @@
+# ColdFusion / CommandBox
+.box/
+.engine/
+server.json
+.DS_Store
+logs/
+temp/
+WEB-INF/
