@@ -1,3 +1,5 @@
+<!--- PROCESS-INCIDENT.CFM --->
+
 <!--- Vérification que le formulaire a été soumis --->
 <cfif NOT structKeyExists(form, "restaurant")>
     <cflocation url="report-incident.cfm" addtoken="false">

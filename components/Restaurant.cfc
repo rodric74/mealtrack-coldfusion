@@ -1,3 +1,4 @@
+<!--- Restaurant.cfc --->
 <cfcomponent displayname="Restaurant" hint="Gestion des restaurants SODEXO">
     
     <!--- Propriétés --->

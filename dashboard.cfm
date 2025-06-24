@@ -1,3 +1,4 @@
+<!--- DASHBOARD --->
 <!--- Initialisation --->
 <cfset incidentObj = new components.Incident()>
 <cfset incidentService = new components.IncidentService()>

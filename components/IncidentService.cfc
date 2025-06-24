@@ -1,3 +1,5 @@
+<!--- IncidentService.cfc --->
+
 <cfcomponent displayname="IncidentService" hint="Service de gestion des incidents">
     
     <cffunction name="init" access="public" returntype="IncidentService">

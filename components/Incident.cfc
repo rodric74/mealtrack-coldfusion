@@ -1,3 +1,5 @@
+<!--- Incident.cfc --->
+
 <cfcomponent displayname="Incident" hint="Gestion des incidents">
     
     <!--- Propriétés --->

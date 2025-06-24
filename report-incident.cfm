@@ -1,3 +1,5 @@
+<!--- report-incident.cfm --->
+
 <!--- Chargement des services --->
 <cfset restaurantObj = new components.Restaurant("")>
 <cfset incidentService = new components.IncidentService()>
@@ -85,7 +87,7 @@
 <body>
     <div class="container">
         <h1>🚨 Signaler un incident</h1>
-        
+
          <!---Afficher les erreurs --->
          <cfif structKeyExists(session, "errorMessage")>
             <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
