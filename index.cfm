@@ -29,6 +29,16 @@
 </head>
 <body>
     <h1>🍽️ MealTrack - Système de suivi qualité</h1>
+
+    <div style="margin: 20px 0;">
+        <a href="report-incident.cfm" style="background: #ff5500; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            🚨 Signaler un incident
+        </a>
+    </div>
+
+    <a href="dashboard.cfm" style="background: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-left: 10px;">
+        📊 Tableau de bord
+    </a>
     
     <cfset username = "Roro">
     <p>Bonjour <strong><cfoutput>#username#</cfoutput></strong> ! 
