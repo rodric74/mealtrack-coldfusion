@@ -190,7 +190,12 @@
             <tbody>
                 <cfloop array="#incidents#" index="incident">
                     <tr>
-                        <td>#<cfoutput>#incident.id#</cfoutput></td>
+                        <td>
+                            <a href="incident-detail.cfm?id=<cfoutput>#incident.id#</cfoutput>" 
+                               style="color: #007bff; text-decoration: none; font-weight: 600;">
+                                #<cfoutput>#incident.id#</cfoutput>
+                            </a>
+                        </td>
                         <td><cfoutput>#dateFormat(incident.dateReport, "dd/mm")# #timeFormat(incident.dateReport, "HH:mm")#</cfoutput></td>
                         <td><cfoutput>#incident.restaurant#</cfoutput></td>
                         <td>

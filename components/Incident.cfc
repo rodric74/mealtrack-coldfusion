@@ -18,21 +18,29 @@
     
     <!--- Constructeur --->
     <cffunction name="init" access="public" returntype="Incident">
-        <!--- Charger quelques incidents de test --->
-        <cfset loadSampleData()>
+        <!--- Utiliser la session pour persister les données --->
+        <cfif NOT structKeyExists(session, "incidents")>
+            <cfset session.incidents = []>
+            <cfset loadSampleData()>
+        </cfif>
+        <cfset this.incidents = session.incidents>
         <cfreturn this>
     </cffunction>
     
     <!--- Ajouter un incident --->
-    <cffunction name="addIncident" access="public" returntype="numeric">
-        <cfargument name="data" type="struct" required="true">
-        
-        <cfset var newIncident = arguments.data>
-        <cfset newIncident.id = arrayLen(this.incidents) + 1>
-        <cfset arrayAppend(this.incidents, newIncident)>
-        
-        <cfreturn newIncident.id>
-    </cffunction>
+    <!--- Modifier addIncident pour sauver en session --->
+<cffunction name="addIncident" access="public" returntype="numeric">
+    <cfargument name="data" type="struct" required="true">
+    
+    <cfset var newIncident = arguments.data>
+    <cfset newIncident.id = arrayLen(this.incidents) + 1>
+    <cfset arrayAppend(this.incidents, newIncident)>
+    
+    <!--- Sauvegarder en session --->
+    <cfset session.incidents = this.incidents>
+    
+    <cfreturn newIncident.id>
+</cffunction>
     
     <!--- Obtenir tous les incidents --->
     <cffunction name="getAllIncidents" access="public" returntype="array">
@@ -64,6 +72,37 @@
         
         <cfreturn stats>
     </cffunction>
+
+    <!--- Obtenir un incident par ID --->
+<cffunction name="getIncidentById" access="public" returntype="struct">
+    <cfargument name="id" type="numeric" required="true">
+    
+    <cfloop array="#this.incidents#" index="inc">
+        <cfif inc.id EQ arguments.id>
+            <cfreturn inc>
+        </cfif>
+    </cfloop>
+    
+    <!--- Si pas trouvé, retourner struct vide --->
+    <cfreturn {}>
+</cffunction>
+
+<!--- Mettre à jour le statut --->
+<cffunction name="updateStatus" access="public" returntype="boolean">
+    <cfargument name="id" type="numeric" required="true">
+    <cfargument name="newStatus" type="string" required="true">
+    
+    <cfloop from="1" to="#arrayLen(this.incidents)#" index="i">
+        <cfif this.incidents[i].id EQ arguments.id>
+            <cfset this.incidents[i].status = arguments.newStatus>
+            <!--- Sauvegarder en session --->
+            <cfset session.incidents = this.incidents>
+            <cfreturn true>
+        </cfif>
+    </cfloop>
+    
+    <cfreturn false>
+</cffunction>
     
     <!--- Données de test --->
     <cffunction name="loadSampleData" access="private">
