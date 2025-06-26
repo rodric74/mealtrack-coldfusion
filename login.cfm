@@ -122,7 +122,7 @@
     <div class="login-container">
         <div class="logo">
             <h1>🍽️ MealTrack</h1>
-            <p>Système de gestion qualité SODEXO</p>
+            <p>Système de gestion qualité RESTO</p>
         </div>
         
        <!--- Messages --->
@@ -145,7 +145,7 @@
                 <input type="email" 
                        name="email" 
                        id="email" 
-                       placeholder="votre.email@sodexo.com"
+                       placeholder="votre.email@resto.com"
                        required 
                        autofocus>
             </div>
@@ -165,9 +165,9 @@
         <div class="demo-info">
             <h4>🔐 Comptes de démonstration :</h4>
             <ul>
-                <li>Admin : <code>admin@sodexo.com</code> / <code>admin123</code></li>
-                <li>Manager : <code>manager@sodexo.com</code> / <code>manager123</code></li>
-                <li>Utilisateur : <code>roro@sodexo.com</code> / <code>roro123</code></li>
+                <li>Admin : <code>admin@resto.com</code> / <code>admin123</code></li>
+                <li>Manager : <code>manager@resto.com</code> / <code>manager123</code></li>
+                <li>Utilisateur : <code>roro@resto.com</code> / <code>roro123</code></li>
             </ul>
         </div>
     </div>

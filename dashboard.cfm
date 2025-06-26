@@ -1,5 +1,14 @@
 <!--- DASHBOARD --->
 
+<!--- DEBUG: Temps restant --->
+<cfif structKeyExists(session, "user") AND structKeyExists(session.user, "lastActivity")>
+    <cfset minutesInactive = dateDiff("n", session.user.lastActivity, now())>
+    <p style="color: orange;">
+        ⏱️ Inactif depuis : <cfoutput>#minutesInactive#</cfoutput> minute(s) 
+        (déconnexion à 1 minute)
+    </p>
+</cfif>
+
 <!--- Protection de la page --->
 <cfinclude template="secure.cfm">
 

@@ -146,7 +146,7 @@
             severity = "high",
             description = "Présence d'insectes dans la salade. Inacceptable !",
             name = "Marie Dupont",
-            email = "m.dupont@sodexo.com",
+            email = "m.dupont@resto.com",
             dateReport = now(),
             status = "new"
         })>
@@ -157,7 +157,7 @@
             severity = "medium",
             description = "Temps d'attente très long à la caisse, plus de 20 minutes",
             name = "Jean Martin",
-            email = "j.martin@sodexo.com",
+            email = "j.martin@rest  o.com",
             dateReport = dateAdd("h", -2, now()),
             status = "new"
         })>
@@ -168,7 +168,7 @@
             severity = "low",
             description = "Plus de desserts disponibles après 13h30",
             name = "Sophie Bernard",
-            email = "s.bernard@sodexo.com",
+            email = "s.bernard@resto.com",
             dateReport = dateAdd("d", -1, now()),
             status = "resolved"
         })>

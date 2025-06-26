@@ -168,7 +168,7 @@
             <div class="form-group">
                 <label for="email">Votre email (pour le suivi)</label>
                 <input type="email" name="email" id="email" 
-                       placeholder="nom@sodexo.com">
+                       placeholder="nom@resto.com">
             </div>
             
             <button type="submit" class="btn">Envoyer le signalement</button>

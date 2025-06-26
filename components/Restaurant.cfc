@@ -1,5 +1,5 @@
 <!--- Restaurant.cfc --->
-<cfcomponent displayname="Restaurant" hint="Gestion des restaurants SODEXO">
+<cfcomponent displayname="Restaurant" hint="Gestion des restaurants RESTO">
     
     <!--- Propriétés --->
     <cfproperty name="id" type="numeric">

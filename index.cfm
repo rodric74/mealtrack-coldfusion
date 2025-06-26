@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MealTrack - SODEXO</title>
+    <title>MealTrack - RESTO</title>
     <meta charset="UTF-8">
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
