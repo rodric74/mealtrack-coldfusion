@@ -221,6 +221,9 @@
         <a href="report-incident.cfm" style="background: #ff5500; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
             🚨 Signaler un incident
         </a>
+        <a href="statistics.cfm" style="background: #28a745; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-right: 10px;">
+            📈 Statistiques
+        </a>
         <a href="index.cfm" style="background: #6c757d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
             🏠 Accueil
         </a>

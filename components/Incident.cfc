@@ -103,6 +103,40 @@
     
     <cfreturn false>
 </cffunction>
+
+<!--- Obtenir les stats par restaurant --->
+<cffunction name="getStatsByRestaurant" access="public" returntype="array">
+    <cfset var stats = {}>
+    
+    <!--- Compter par restaurant --->
+    <cfloop array="#this.incidents#" index="inc">
+        <cfif NOT structKeyExists(stats, inc.restaurant)>
+            <cfset stats[inc.restaurant] = {
+                name = inc.restaurant,
+                total = 0,
+                high = 0,
+                medium = 0,
+                low = 0
+            }>
+        </cfif>
+        
+        <cfset stats[inc.restaurant].total++>
+        
+        <cfswitch expression="#inc.severity#">
+            <cfcase value="high"><cfset stats[inc.restaurant].high++></cfcase>
+            <cfcase value="medium"><cfset stats[inc.restaurant].medium++></cfcase>
+            <cfcase value="low"><cfset stats[inc.restaurant].low++></cfcase>
+        </cfswitch>
+    </cfloop>
+    
+    <!--- Convertir en array --->
+    <cfset var result = []>
+    <cfloop collection="#stats#" item="key">
+        <cfset arrayAppend(result, stats[key])>
+    </cfloop>
+    
+    <cfreturn result>
+</cffunction>
     
     <!--- Données de test --->
     <cffunction name="loadSampleData" access="private">
