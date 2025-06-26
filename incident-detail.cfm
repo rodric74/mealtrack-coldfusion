@@ -1,3 +1,5 @@
+<!--- Protection de la page --->
+<cfinclude template="secure.cfm">
 
 <!--- Vérifier qu'on a un ID --->
 <cfif NOT structKeyExists(url, "id") OR NOT isNumeric(url.id)>

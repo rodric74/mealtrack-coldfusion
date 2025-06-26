@@ -1,3 +1,6 @@
+<!--- Protection de la page --->
+<cfinclude template="secure.cfm">
+
 <!--- Chargement des données --->
 <cfset incidentObj = new components.Incident()>
 <cfset incidents = incidentObj.getAllIncidents()>

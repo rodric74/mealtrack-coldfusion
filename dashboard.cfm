@@ -1,4 +1,8 @@
 <!--- DASHBOARD --->
+
+<!--- Protection de la page --->
+<cfinclude template="secure.cfm">
+
 <!--- Initialisation --->
 <cfset incidentObj = new components.Incident()>
 <cfset incidentService = new components.IncidentService()>
@@ -123,8 +127,18 @@
 </head>
 <body>
     <div class="header">
+        <!--- Info utilisateur et déconnexion --->
+    <div style="float: right; text-align: right;">
+        <p style="margin: 0; color: #666; font-size: 14px;">
+            👤 Connecté : <strong><cfoutput>#session.user.name#</cfoutput></strong>
+            <br>
+            <span style="font-size: 12px;">(<cfoutput>#session.user.role#</cfoutput>)</span>
+        </p>
+        <a href="logout.cfm" style="color: #ff5500; font-size: 14px; text-decoration: none;">
+            🚪 Déconnexion
+        </a>
         <h1>📊 Tableau de bord des incidents</h1>
-        <<p>Vue d'ensemble des incidents signalés dans les restaurants
+        <p>Vue d'ensemble des incidents signalés dans les restaurants
             <cfif len(trim(url.restaurant))>
                 <br><strong style="color: #ff5500;">🔍 Filtre actif : <cfoutput>#url.restaurant#</cfoutput></strong>
             </cfif>

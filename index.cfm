@@ -40,7 +40,7 @@
         📊 Tableau de bord
     </a>
     
-    <cfset username = "Roro">
+    <cfset username = "Rodric">
     <p>Bonjour <strong><cfoutput>#username#</cfoutput></strong> ! 
     Nous sommes le <cfoutput>#dateFormat(now(), "dd/mm/yyyy")# à #timeFormat(now(), "HH:mm")#</cfoutput></p>
     

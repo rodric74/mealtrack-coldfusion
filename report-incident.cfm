@@ -1,5 +1,8 @@
 <!--- report-incident.cfm --->
 
+<!--- Protection de la page --->
+<cfinclude template="secure.cfm">
+
 <!--- Chargement des services --->
 <cfset restaurantObj = new components.Restaurant("")>
 <cfset incidentService = new components.IncidentService()>
